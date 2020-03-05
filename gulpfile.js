@@ -9,11 +9,12 @@ const svgSprite        = require('gulp-svg-sprite');
 const svgmin           = require('gulp-svgmin');
 const cheerio          = require('gulp-cheerio');
 const replace          = require('gulp-replace');
+const gulpPug          = require('gulp-pug');
 const browsersync      = require('browser-sync').create();
 
 const path = {
     build: {
-        html   : "dist/files/directory/",
+        html   : "dist/",
         js     : "dist/files/directory/js/",
         style  : "dist/files/directory/css/",
         img    : "dist/files/directory/img/",
@@ -22,16 +23,16 @@ const path = {
     },
 
     src: {
-        html  : "src/*.html",
+        pug  : "src/*.pug",
         js    : "src/js/*.js",
         style : "src/style/*.scss",
         img   : "src/img/**/*.{jpg,png,gif,ico}",
-        svg   : "src/img/svg/*.svg",
+        svg   : "src/img/**/*.svg",
         fonts : "src/fonts/**/*"
     },
 
     watch: {
-        html  : "src/**/*.html",
+        pug  : "src/**/*.pug",
         js    : "src/js/**/*.js",
         style : "src/style/**/*.scss",
         img   : "src/img/**/*.{jpg,png,gif,ico}",
@@ -47,7 +48,7 @@ const path = {
 function browserSync(done) {
     browsersync.init({
         server: {
-            baseDir: "./dist/files/directory/",
+            baseDir: "./dist/",
             directory: true
         },
         port: 3000,
@@ -63,9 +64,11 @@ function browserSyncReload(done) {
 }
 //================ / browserSync
 
-function html() {
-    return gulp.src(path.src.html)
-    .pipe(rigger())
+function pug() {
+    return gulp.src(path.src.pug)
+    .pipe(gulpPug({
+        pretty: true
+    }))
     .pipe(gulp.dest(path.build.html))
     .pipe(browsersync.stream());
 }
@@ -137,9 +140,8 @@ function fonts() {
 }
 
 function watchFiles() {
-    gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.pug, pug);
     gulp.watch(path.watch.style, style);
-    gulp.watch(path.watch.js, scripts);
     gulp.watch(path.watch.img, img);
     gulp.watch(path.watch.svg, svg);
     gulp.watch(path.watch.svg, svgOrigin);
@@ -150,10 +152,10 @@ function clean() {
     return del(path.clean);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, style, scripts, img, svg, svgOrigin, fonts));
+const build = gulp.series(clean, gulp.parallel(pug, style, scripts, img, svg, svgOrigin, fonts));
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
-exports.html        = html;
+exports.pug         = pug;
 exports.style       = style;
 exports.scripts     = scripts;
 exports.img         = img;
