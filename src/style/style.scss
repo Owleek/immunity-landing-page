@@ -2,3 +2,147 @@
 @import "variables";
 @import "mixin";
 @import "default";
+
+.main-screen {
+  background-image: url("../img/bg-1.png");
+  background-size: cover;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  color: $white;
+}
+
+.header {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+}
+
+.logo {
+  &__title {
+    font-size: 56px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin: 0 0 -5px 0;
+    letter-spacing: -3px;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    display: inline-block;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    padding: 5px 20px 5px 10px;
+    position: relative;
+    background-image: url("../img/art_6.png");
+    background-size: contain;
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+  }
+}
+
+.benefits {
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  align-self: flex-start;
+  margin-top: 30px;
+
+  &__item {
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+  &__ico,
+  &__text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__ico {
+    margin-right: 10px;
+  }
+  &__text {}
+}
+
+.benefits__ico .icon {
+    max-width: 35px;
+    max-height: 35px;
+}
+
+.order-layer {
+  &__inner {
+    display: flex;
+  }
+  &__info {
+    width: 61%;
+  }
+  &__title {
+    color: $sky;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+  }
+  &__subtitle {
+    padding-right: 22%;
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.time-left {
+  display: flex;
+  margin-bottom: 30px;
+
+  &__text {
+    text-transform: uppercase;
+    color: $sky;
+    font-weight: 500;
+
+    .highlighted {
+      display: block;
+      font-size: 40px;
+      line-height: 1;
+    }
+    .small {
+      display: block;
+      font-size: 12px;
+    }
+  }
+  &__counter {}
+}
+
+
+.properties {
+  font-size: 18px;
+  padding-right: 80px;
+  margin-bottom: 36px;
+
+  &__item {
+    padding-left: 40px;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &:before {
+      content: '';
+      width: 23px;
+      height: 23px;
+      position: absolute;
+      top: 50%; left: 0;
+      transform: translateY(-50%);
+      background-image: url("../img/svg/ico_4.svg");
+
+    }
+  }
+}

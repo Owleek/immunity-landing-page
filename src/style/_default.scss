@@ -5,6 +5,9 @@ html, body {
 body {
     line-height: 1.3;
     min-width: 320px;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: $text;
 }
 
 h1, h2, h3, h4 {
@@ -83,6 +86,11 @@ b {
     }
 }
 
+.layout {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
 .keepcenter {
     max-width: 1140px;
     margin: 0 auto;
@@ -96,8 +104,8 @@ b {
     flex-grow: 1;
 }
 
-.image-wrapper,
-.video-wrapper {
+.image-wrap,
+.video-wrap {   
     position: relative;
 
     &:before {
@@ -119,5 +127,16 @@ b {
             height: 100%;
             object-fit: cover;
         }
+    }
+}
+
+
+.icon {
+    color: $sky;
+    fill: $sky;
+
+    path {
+        color: $sky;
+        fill: $sky;
     }
 }
