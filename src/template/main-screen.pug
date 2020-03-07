@@ -36,26 +36,27 @@ section.main-screen
               strong.highlighted Акция
               span.small заканчивается через
             .time-left__counter
+              script(src="files/directory/js/timerInit.js")
           .form
-            form
+            form(action="/order" method="post")
               .form__field
                 input(type="text" placeholder="Ваше имя")
               .form__field
                 input(type="text" placeholder="Ваш телефон")
               .form__button
-                button(type="submit" class="button")
+                button(type="submit" class="button") заказать товар
         .teaser
           .teaser__inner
-            .teaser__image.image-wrap
-              .image
-                img(src="files/directory/img/pic_1.png" alt="Immunity")
-            .teaser__order
-              .order-image.image-wrap
+            .image-frame
+              .teaser__image.image-wrap
                 .image
-                  img(src="files/directory/img/product.png" alt="Bioscan")
-              .order-price
-                .old-price 1299 ₽
-                .new-price 999 ₽
+                  img(src="files/directory/img/pic_1.png" alt="Immunity" draggable="false")
+              .order-image.image-wrap
+                .order-price
+                  .order-price__old 1299 ₽
+                  .order-price__new 999 ₽
+                .image
+                  img(src="files/directory/img/product.png" alt="Bioscan" draggable="false")
 
 
 

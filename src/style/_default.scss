@@ -50,33 +50,40 @@ img {
     max-width: 100%;
 }
 
-input {}
+input {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+}
 
 b {
     font-weight: bold;
 }
 
 .button {
-    font-size: 20px;
-    font-weight: bold;
     border: none;
-    padding: 14px 35px;
-    color: #ffffff;
+    padding: 26px 50px;
     border: none;
-    border-radius: 5px;
-    background: transparent;
+    border-radius: 200px;
+    background: $sky;
     display: inline-block;
     overflow: hidden;
     position: relative;
     vertical-align: middle;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
     text-decoration: none !important;
+    text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
+    user-select: none;
     cursor: pointer;
     transition: all 0.15s ease-in;
 
     &:hover {
-        background-color: #f6f6f6;
+        background: $blue;
     }
 
     &_block {
@@ -138,5 +145,20 @@ b {
     path {
         color: $sky;
         fill: $sky;
+    }
+}
+
+.form {
+    width: 450px;
+
+    &__field {
+        margin-bottom: 10px;
+
+        input {
+            padding: 22px 25px 22px 25px;
+            border: 0;
+            border-radius: 200px;
+            width: 100%;
+        }
     }
 }
