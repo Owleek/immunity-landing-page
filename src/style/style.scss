@@ -202,15 +202,6 @@
   bottom: 0;
   transform: translate(-50%, -50%);
   transition: all 0.15s ease-in;
-
-  &:before {
-    padding-top: 55%;
-  }
-  .image {
-      img {
-          object-fit: contain;
-      }
-  }
 }
 
 .order-price {
@@ -243,5 +234,388 @@
     font-size: 45px;
     color: $white;
     font-weight: bold;
+  }
+
+  &_sky {
+    &:before {
+      background-color: $sky;
+    }
+
+    .order-price__old {
+      color: $white;
+    }
+  }
+
+}
+
+.benefit-cards {
+  margin-top: -225px;
+  margin-bottom: 135px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.benefit-card {
+  padding: 68px 22px 40px;
+  background-color: $white;
+  flex-basis: calc(20% - 8px);
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+
+  &__ico {
+    display: inline-block;
+    margin-bottom: 35px;
+
+    .icon {
+      max-width: 102px;
+      max-height: 102px;
+
+      color: $blue;
+      fill: $blue;
+      
+      path {
+        color: $blue;
+        fill: $blue;
+      }
+    }
+  }
+
+
+
+  &_blue {
+    background-color: $blue;
+    color: $white;
+
+    .icon {
+       color: $white;
+       fill: $white;
+      
+       path {
+         color: $white;
+         fill: $white;
+       }
+    }
+  }
+}
+
+.exposition {
+  
+  &__inner {
+    display: flex;
+  }
+  
+  &__image {
+    display: block;
+    flex-grow: 1;
+
+    &.image-wrap {       
+        &:before {
+            padding-top: 126%;
+        }
+    
+        .image {
+            top: -97px; left: -26px;
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+
+  }
+
+  &__info {
+    flex-basis: 51%;
+    margin-left: auto;
+  }
+
+  &__title {
+    color: $blue;
+    font-size: 44px;
+    margin-bottom: 0;
+  }
+
+  &__subtitle {
+    font-size: 33px;
+    color: #4f4f4f;
+    font-weight: 400;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+  &__teaser {
+    font-size: 55px;
+    font-weight: 700;
+    color: $blue;
+  }
+}
+
+.product-components {
+  margin-bottom: 200px;
+
+  &__inner {}
+
+  &__title {
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+
+  &__title,
+  &__subtitle {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__subtitle {
+    color: $blue;
+    font-size: 22px;
+    margin-bottom: 35px;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__list {
+    flex-basis: 47%;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 35px;
+
+    &:first-child,
+    &:last-child {
+      margin-left: 100px;
+    }
+  }
+
+  &__picture {
+    min-width: 155px;
+    margin-right: 25px;
+  }
+
+  &__info {}
+  
+  &__subject {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  
+  &__text {
+    font-size: 15px;
+  }
+
+  &__image {
+    flex-grow: 1;
+
+    &:before {
+      content: '';
+      width: 90.2vw;
+      height: 94.4vw;
+      width: 1733px;
+      height: 1813px;
+      position: absolute;
+      top: 33vw; left: 5.9vw;
+      top: 635px; left: 114px;
+      transform: translate(-50%, -50%);
+      background-image: url('../img/art_5.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50% 50%;
+    }
+  }
+
+}
+
+.additional {
+  padding-bottom: 1px;
+  position: relative;
+  background-color: $body;
+
+  &:before {
+    content: '';
+    width: 47.3vw;
+    height: 27.7vw;
+    width: 909px;
+    height: 533px;
+    position: absolute;
+    left: 0; top: 0;
+    transform: translateY(-20%);
+    background-image: url('../img/pic_6.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  &__inner {
+    width: 51%;
+    margin-left: auto;
+  }
+
+  &__title {
+    font-size: 44px;
+    color: $blue;
+    margin-bottom: 0px;
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 35px;
+  }
+
+  &__button {
+    margin-bottom: 130px;
+  }
+}
+
+.singl-layer {
+  position: relative;
+  background-image: url('../img/bg-2.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  &__inner {
+    padding-top: 90px;
+    display: flex;
+  }
+  &__form {
+    flex-basis: 44%;
+    padding-bottom: 64px;
+  }
+  &__title {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $sky;
+    margin-bottom: 40px;
+  }
+  &__teaser {
+    flex-grow: 1;
+    align-self: stretch;
+    text-align: right;
+
+    .image-wrap {
+      max-width: 560px;
+      margin-left: auto;
+    }
+  }
+
+  &__price {
+    &.order-price {
+      right: auto;
+      left: 45px;
+      top: 13px;
+
+      &__old {
+        font-size: 25px;
+      }
+      &__new {
+        font-size: 25px;
+      }
+    }
+
+
+  }
+
+  &__time-left {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+
+.stages {
+  &__inner {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  &__title {
+    font-size: 34px;
+  }
+  &__description {
+    font-size: 18px;
+    margin-bottom: 45px;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  &__item {
+    width: calc(25% - 53px);
+
+    &:not(:last-child) {
+      .stages__icon {
+        position: relative;
+
+        &:after {
+          content: '';
+          width: 70px;
+          height: 18px;
+          position: absolute;
+          top: 50%; right: 0;
+          transform: translate(100%, -50%);
+          background-image: url('../img/art_7.png');
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  &__ico {
+    display: inline-block;
+    margin-bottom: 35px;
+
+    .icon {
+      max-width: 107px;
+      max-height: 107px;
+    }
+  }
+}
+
+.opinion {
+  background-color: #f4fbfd;
+
+  &__inner {
+    padding-top: 60px;
+    padding-bottom: 75px;
+  }
+  &__info {
+    width: 64%;
+    padding-bottom: 1px;
+  }
+  &__title {
+    font-size: 34px;
+  }
+  &__text {
+    font-size: 18px;
+
+    &:last-of-type {
+      margin-bottom: 60px;
+    }
+  }
+  &__caption {
+    font-size: 22px;
+    font-weight: 500;
+    font-style: italic;
   }
 }
